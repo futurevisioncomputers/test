@@ -1,0 +1,40 @@
+
+
+
+<!-- <div class="form_container">
+  <h2>Signup Form</h2>
+
+      <form #registrationForm ="ngForm" (ngSubmit)="submitData(registrationForm)">
+
+          <input type="email" name="email" placeholder="Enter email" ngModel><br>
+
+          <input type="password" name="paswd" placeholder="Password" ngModel><br>
+
+          <input type="password" name="cfmpaswd" placeholder="Confirm password" ngModel><br> 
+
+
+          <input type="submit" value="Signup"> 
+
+      </form>
+</div> -->
+
+
+<div class="form_container">
+   
+    <h2>Signup Form - Model Driven Form</h2>
+
+      <form [formGroup] = "formData" (ngSubmit)="submitData(formData.value)">
+
+      <input type="email" name="email" placeholder="Enter email" formControlName="email"><br>
+
+      <input type="password" name="paswd" placeholder="Password" formControlName="paswd"><br>
+
+      <input type="password" name="confpaswd" placeholder="Confirm password" formControlName="confpaswd"><br> 
+
+      <input type="submit" value="Signup" [disabled]="formData.invalid"> 
+
+    </form>
+
+  </div>
+
+ 
